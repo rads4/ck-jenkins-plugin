@@ -10,7 +10,14 @@ service-specific, or deployment-specific logic. Anything that consumes AWS
 credentials — the AWS CLI, boto3, Terraform, Docker — consumes them the way it
 always does.
 
-**Status: 2.2.0 — 237 tests green, five review passes. 2.1 is what is installed on CK production.**
+**Status: 2.2.0 — 237 tests green, five review passes.**
+
+> **Live on infra Jenkins, enforcing on all 806 jobs since 2026-08-24.** Verified
+> under full traffic on 2026-08-25: 279/279 Jenkins-originated AssumeRole events
+> accounted for, **zero unattributed**, 14 distinct prod jobs, zero plugin-caused
+> build failures. See [`docs/ROLLOUT-VERIFICATION-2026-08-25.md`](docs/ROLLOUT-VERIFICATION-2026-08-25.md).
+> **CK production** is a separate controller and still runs 2.1 with the master
+> switch off.
 
 > **Versioning is `major.minor.patch`** (adopted 2026-08-17):
 >
