@@ -13,9 +13,12 @@ always does.
 **Status: 2.2.0 — 237 tests green, five review passes.**
 
 > **Live on infra Jenkins, enforcing on all 806 jobs since 2026-08-24.** Verified
-> under full traffic on 2026-08-25: 279/279 Jenkins-originated AssumeRole events
-> accounted for, **zero unattributed**, 14 distinct prod jobs, zero plugin-caused
-> build failures. See [`docs/ROLLOUT-VERIFICATION-2026-08-25.md`](docs/ROLLOUT-VERIFICATION-2026-08-25.md).
+> under full traffic on 2026-08-25 (279/279 accounted for, zero unattributed) and
+> **re-verified over 5½ days on 2026-08-30: 3,045/3,045 Jenkins-originated
+> AssumeRole events accounted for across 929 builds, zero unattributed, zero
+> plugin-caused failures, prod coverage up from 14 to 22 distinct jobs.**
+> See [`docs/ROLLOUT-VERIFICATION-2026-08-25.md`](docs/ROLLOUT-VERIFICATION-2026-08-25.md)
+> and [`docs/SOAK-VERIFICATION-2026-08-30.md`](docs/SOAK-VERIFICATION-2026-08-30.md).
 > **CK production** is a separate controller and still runs 2.1 with the master
 > switch off.
 

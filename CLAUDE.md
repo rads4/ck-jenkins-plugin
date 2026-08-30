@@ -43,6 +43,7 @@ project.**
 | v2.3 — static unprofiled ARN removed from the form | Implemented. **Installed on the POC clone, so the number is spent** |
 | **v2.2.0 — THE INFRA RELEASE** | **237 tests, five adversarial review passes, 14/14 canaries. `sha256 f2d3a59e…`** |
 | **Infra rollout — all 806 jobs** | **COMPLETE 2026-08-24, verified under full traffic 2026-08-25.** `jobNamePattern` blank, `observeOnly` false. 279/279 Jenkins-originated AssumeRole events accounted for, **zero unattributed**; 14 distinct prod jobs; zero plugin-caused failures. See `docs/ROLLOUT-VERIFICATION-2026-08-25.md` |
+| **5½-day soak — 2026-08-30** | **STILL CLEAN.** 49,252 AssumeRole events swept; of 3,045 with a Jenkins caller: 2,917 `jk-*` (929 builds) + 106 probes (0 denials) + 22 second-hop + **0 unattributed** = 3,045. Zero Jenkins-caller errors. **22 distinct prod jobs**, up from 14. See `docs/SOAK-VERIFICATION-2026-08-30.md` |
 
 **Versioning: `major.minor.patch`, and versions track INSTALLATIONS, not builds.**
 

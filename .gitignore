@@ -16,6 +16,7 @@ work
 
 # Session archive: full conversation transcript, infrastructure inventory and raw
 # evidence from the jenkins-node-inspect session. Contains AWS account IDs, role
-# ARNs, node configurations and internal hostnames. THIS REPOSITORY IS PUBLIC —
-# never commit anything from here.
+# ARNs, node configurations and internal hostnames. This repository went private on
+# 2026-08-25, but the rule stands regardless of visibility — never commit anything
+# from here.
 .session-archive/
