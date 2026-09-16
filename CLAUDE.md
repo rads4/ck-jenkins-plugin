@@ -38,10 +38,10 @@ project.**
 | M12 — Managed Authentication: decorate the node's own configuration | Implemented, validated in production on two unmodified pipelines |
 | ~~M12i — production incident investigation (Gradle 403)~~ | **Closed: the plugin was not the cause.** See below |
 | v2.0 — unprofiled attribution, output verification, runtime controls | Superseded by 2.1 before wide rollout |
-| v2.1 — Freestyle coverage, trailing-blank fix, no-role profiles | Implemented, 201 tests — **this is what is installed on CK production** |
+| v2.1 — Freestyle coverage, trailing-blank fix, no-role profiles | Implemented, 201 tests — was on infra Jenkins (switch off) until **replaced by 2.2.0** |
 | **v2.2 — context shadowing, workspace anchoring, stale memo, parallel race, observe-only, additions-only environment invariant, per-node unprofiled attribution** | Implemented, 220 tests, `ck-aws 2.2` (`sha256 f5150ba3…`). Installed and validated on the POC clone. Superseded by 2.3 |
 | v2.3 — static unprofiled ARN removed from the form | Implemented. **Installed on the POC clone, so the number is spent** |
-| **v2.2.0 — THE INFRA RELEASE** | **237 tests, five adversarial review passes, 14/14 canaries. `sha256 f2d3a59e…`** |
+| **v2.2.0 — THE INFRA RELEASE** | **239 tests, five adversarial review passes, 14/14 canaries. `sha256 f2d3a59e…`** |
 | **Infra rollout — all 806 jobs** | **COMPLETE 2026-08-24, verified under full traffic 2026-08-25.** `jobNamePattern` blank, `observeOnly` false. 279/279 Jenkins-originated AssumeRole events accounted for, **zero unattributed**; 14 distinct prod jobs; zero plugin-caused failures. See `docs/ROLLOUT-VERIFICATION-2026-08-25.md` |
 | **5½-day soak — 2026-08-30** | **STILL CLEAN.** 49,252 AssumeRole events swept; of 3,045 with a Jenkins caller: 2,917 `jk-*` (929 builds) + 106 probes (0 denials) + 22 second-hop + **0 unattributed** = 3,045. Zero Jenkins-caller errors. **22 distinct prod jobs**, up from 14. See `docs/SOAK-VERIFICATION-2026-08-30.md` |
 
@@ -66,7 +66,7 @@ Applying that rule, as of 2026-08-17:
 
 | Number | Status |
 |---|---|
-| **2.1** | Installed on **CK production**. Master switch off. Spent |
+| **2.1** | Was on infra Jenkins, master switch off, until replaced by 2.2.0. Spent |
 | **2.2** (`f5150ba3…`) | Test install on the POC clone. The last build validated against real jobs. Spent |
 | **2.3** (`bc4d59e1…`) | Test install on the POC clone. Spent |
 | 2.4 | Built, never installed, superseded by the code-review fixes. **Not** spent |

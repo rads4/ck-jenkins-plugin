@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **On CK production (infra Jenkins)** | ck-aws **2.1**, master switch **OFF**. Nothing is audited today. Infra has never been restarted, reconfigured or installed to during this work |
+| **On infra Jenkins** | ck-aws **2.2.0**, enforcing on all jobs since 2026-08-24 (`observeOnly` off, `jobNamePattern` blank). Verified under full traffic; re-verified over 5½ days on 2026-08-30. There was never a separate "CK production" controller — the plugin was tested on the POC clone (built from the infra AMI) and then installed on infra Jenkins |
 | **THE INFRA RELEASE** | **2.2.0** — 239 tests, five adversarial review passes, `sha256 f2d3a59e…`, `Implementation-Build 1bf157e…`. The 2.1.x line (2.1.1–2.1.8) was POC iteration and is spent |
 | **Defaults** | `managedAuthentication = false`, `observeOnly = true`. Observe-only has **no effect** until the master switch is on — verified in source, not assumed |
 | **Versioning** | `major.minor.patch`. A plain `mvn verify` yields `-SNAPSHOT (private-…)`, deliberately not installable; a release needs `mvn -Dchangelist= clean verify` |

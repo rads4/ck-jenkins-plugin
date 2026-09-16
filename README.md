@@ -10,7 +10,7 @@ service-specific, or deployment-specific logic. Anything that consumes AWS
 credentials — the AWS CLI, boto3, Terraform, Docker — consumes them the way it
 always does.
 
-**Status: 2.2.0 — 237 tests green, five review passes.**
+**Status: 2.2.0 — 239 tests green, five review passes.**
 
 > **Live on infra Jenkins, enforcing on all 806 jobs since 2026-08-24.** Verified
 > under full traffic on 2026-08-25 (279/279 accounted for, zero unattributed) and
@@ -19,8 +19,9 @@ always does.
 > plugin-caused failures, prod coverage up from 14 to 22 distinct jobs.**
 > See [`docs/ROLLOUT-VERIFICATION-2026-08-25.md`](docs/ROLLOUT-VERIFICATION-2026-08-25.md)
 > and [`docs/SOAK-VERIFICATION-2026-08-30.md`](docs/SOAK-VERIFICATION-2026-08-30.md).
-> **CK production** is a separate controller and still runs 2.1 with the master
-> switch off.
+> **2.2.0 is the installed and enforcing version.** It superseded 2.1 on the infra
+> controller ahead of the 2026-08-20 rollout; `observeOnly` is off and `jobNamePattern`
+> is blank, so every job is attributed.
 
 > **Versioning is `major.minor.patch`** (adopted 2026-08-17):
 >
@@ -45,12 +46,12 @@ always does.
 >
 > | Number | Where it stands |
 > |---|---|
-> | 2.1 | On **CK production** today, master switch off. The only install that matters |
+> | 2.1 | Previously on infra Jenkins with the master switch off. **Replaced by 2.2.0.** Spent |
 > | 2.2 — `f5150ba3…` | Test install on the POC clone. The build validated against real jobs — every canary, all 7 agent types, `dev2/fluentd #119`. **Spent** |
 > | 2.3 — `bc4d59e1…` | Test install on the POC clone; static ARN form entry removed. **Spent** |
 > | 2.4 | Built, never installed, superseded by the review fixes. Not spent |
 > | 2.1.1 – 2.1.8 | POC iterations. All spent on the clone |
-> | **2.2.0** | **The infra release.** 249 tests, four review passes |
+> | **2.2.0** | **The infra release.** 239 tests, five review passes |
 >
 > Every *earlier* artifact calling itself 2.2, 2.3 or 2.4 is void — including
 > `b4c94c78…` (no environment invariant), `edde1e04…` (misleading observe-only
